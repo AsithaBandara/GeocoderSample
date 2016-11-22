@@ -1,0 +1,11 @@
+<h1>Locations</h1>
+
+<p><%= link_to "add new location",new_location_path %></p>
+<hr>
+<% @locations.each do |location| %>
+  <h3><%= location.address %> </h3>
+  <p>Latitude: <%= location.latitude %> ||| Longitude: <%= location.longitude%> | <%= link_to "show", location_path(location.id) %></p>
+  <hr>
+<% end %>
+
+</ul>

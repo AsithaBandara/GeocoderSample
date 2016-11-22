@@ -1,0 +1,19 @@
+<h1>Location</h1>
+<hr>
+
+<p><%= @location.address %></p>
+<p>latitude : <%= @location.latitude %></p>
+<p>longitude : <%= @location.longitude %></p>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
+
+<p>
+<%= link_to "add another", new_location_path%> |  <%= link_to "home", locations_path %>
+</p>
+
+<hr>
+
+<h3>Nearby Location</h3>
+<ul>
+<% @location.nearbys(10).each do |l| %>
+  <li> <%= link_to l.address, l%> (<%=  l.distance.round(2) %> miles) </li>
+<% end %>

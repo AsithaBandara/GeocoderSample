@@ -1,0 +1,11 @@
+<h1>Add New Location</h1>
+
+<%= form_for @location, url: locations_path do |f| %>
+  <p>Address</p>
+  <p><%= f.text_field :address%></p>
+  <p>Latitude</p>
+  <p><%= f.text_field :latitude%></p>
+  <p>Longitude</p>
+  <p><%= f.text_field :longitude%></p>
+  <p><%= f.submit "ADD"%></p>
+<% end %>

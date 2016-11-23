@@ -1,6 +1,11 @@
 <h1>Add New Location</h1>
 
 <%= form_for @location, url: locations_path do |f| %>
+
+<% if @location.errors.any? %>
+  <p style="color:red;">Not a valid address</p>
+<% end %>
+
   <p>Address</p>
   <p><%= f.text_field :address%></p>
   <p>Latitude</p>

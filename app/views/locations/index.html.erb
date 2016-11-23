@@ -4,7 +4,10 @@
 <hr>
 <% @locations.each do |location| %>
   <h3><%= location.address %> </h3>
-  <p>Latitude: <%= location.latitude %> ||| Longitude: <%= location.longitude%> | <%= link_to "show", location_path(location.id) %></p>
+  <p>Latitude: <%= location.latitude %> ||| Longitude: <%= location.longitude%>
+    | <%= link_to "show", location_path(location.id) %>
+    | <%= link_to "delete", location_path(location.id), method: :delete%>
+  </p>
   <hr>
 <% end %>
 
